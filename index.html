@@ -88,7 +88,6 @@
             animation: twinkle 5s infinite;
             transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        /* ADDED: Style for faded stars from Website B */
         .star.faded {
             opacity: 0 !important;
             transform: scale(0);
@@ -224,11 +223,10 @@
             top: 0;
             left: 0;
             z-index: -1;
-            /* MODIFIED: Using a subtle background for the active highlight */
             background: rgba(14, 165, 233, 0.2);
             border-radius: 9999px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0; /* JS will now control the opacity on scroll */
+            opacity: 0;
             pointer-events: none;
         }
         .text-white-force { color: white !important; }
@@ -278,7 +276,7 @@
             border: 1px solid var(--border-color);
         }
 
-        /* --- START: REPLACED PORTFOLIO STYLES --- */
+        /* --- Portfolio Styles --- */
         .portfolio-row-title {
             font-size: 1.5rem;
             line-height: 2rem;
@@ -415,7 +413,6 @@
         .scroll-arrow:hover svg {
             transform: scale(1.1);
         }
-        /* --- END: REPLACED PORTFOLIO STYLES --- */
 
         /* --- VIDEO MODAL --- */
         .video-modal {
@@ -428,7 +425,7 @@
         
         .video-modal-content {
             position: relative;
-            width: 65vw; /* <-- MODIFIED: Was 85vw */
+            width: 65vw;
             max-width: 1400px;
             aspect-ratio: 16 / 9;
             transform: scale(0.9);
@@ -484,18 +481,19 @@
     <section id="home" class="hero-background pt-16 pb-20 min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center">
-                <h1 class="text-3xl sm:text-5xl md:text-7xl font-black text-white mb-6 glow-text animate-on-scroll">
+                <h1 class="text-5xl sm:text-5xl md:text-7xl font-black text-white mb-6 glow-text animate-on-scroll">
                     SATYAKAM
                     <span class="block text-[var(--accent-primary)]">SWAMI</span>
                 </h1>
-                <p class="text-base sm:text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light h-8 md:h-auto animate-on-scroll" style="transition-delay: 0.4s;">
-                    Crafting cinematic experiences through <span id="typing-effect" class="text-[var(--accent-primary)] font-semibold"></span><span class="cursor-blink">|</span>
+                <p class="text-base sm:text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light h-14 md:h-auto animate-on-scroll" style="transition-delay: 0.4s;">
+                    <span class="block md:inline">Crafting cinematic experiences through </span>
+                    <span id="typing-effect" class="text-[var(--accent-primary)] font-semibold"></span><span class="cursor-blink">|</span>
                 </p>
-                <div class="flex flex-col sm:flex-row gap-6 justify-center animate-on-scroll" style="transition-delay: 0.6s;">
-                    <a href="#portfolio" class="bg-[var(--accent-primary)] hover:bg-[var(--accent-secondary)] text-white-force px-10 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-[var(--accent-primary)]/40">
+                <div class="flex flex-row gap-4 justify-center animate-on-scroll" style="transition-delay: 0.6s;">
+                    <a href="#portfolio" class="bg-[var(--accent-primary)] hover:bg-[var(--accent-secondary)] text-white-force px-6 py-3 sm:px-10 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-[var(--accent-primary)]/40">
                         View Portfolio
                     </a>
-                    <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-black px-10 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105">
+                    <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 sm:px-10 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all transform hover:scale-105">
                         Let's Collaborate
                     </a>
                 </div>
@@ -828,7 +826,6 @@
                     const originalOpacity = 0.2 + Math.random() * 0.8;
                     starEl.style.opacity = `${originalOpacity}`;
                     fragment.appendChild(starEl);
-                    // MODIFIED: Added isFading property for star interaction
                     stars.push({
                         element: starEl,
                         x: (left / 100) * window.innerWidth,
@@ -873,13 +870,11 @@
                 setTimeout(() => particle.remove(), duration);
             }
 
-            // MODIFIED: Replaced mousemove listener with new one from Website B
             document.addEventListener('mousemove', (e) => {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
                 cursorLight.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%))`;
                 
-                // ADDED: Star interaction logic
                 const touchRadius = 50;
                 stars.forEach(star => {
                     if (star.isFading) return;
@@ -892,7 +887,6 @@
                         star.isFading = true;
                         star.element.classList.add('faded');
                         
-                        // Create particles when a star is touched
                         for (let i = 0; i < 3; i++) {
                             createParticle(star.x, star.y);
                         }
@@ -942,7 +936,7 @@
                 typeEffect();
             }
             
-            // MODIFIED: New navigation highlighting logic from Website B
+            // --- Navigation Highlighting ---
             const highlightBox = document.getElementById('highlight-box');
             const mainNavContainer = document.querySelector('nav .hidden.md\\:block .relative');
             const navLinks = mainNavContainer.querySelectorAll('a.nav-link[href^="#"]');
@@ -953,7 +947,7 @@
                 
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    if (window.scrollY >= sectionTop - 80) { // 80px offset for nav height
+                    if (window.scrollY >= sectionTop - 80) {
                         currentSectionId = section.getAttribute('id');
                     }
                 });
@@ -980,7 +974,6 @@
             };
 
             window.addEventListener('scroll', updateActiveNav);
-            // End of new nav logic
 
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -992,7 +985,7 @@
                 });
             });
 
-            // --- ALL SCROLL-BASED ANIMATIONS ---
+            // --- Scroll-Based Animations ---
             const scrollObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1071,7 +1064,7 @@
                     element.addEventListener('click', () => {
                         const src = element.dataset.videoSrc;
                         if(src) {
-                            iframe.src = src + "?autoplay=1"; // Added autoplay
+                            iframe.src = src + "?autoplay=1";
                             modal.classList.add('active');
                         }
                     });
@@ -1090,7 +1083,7 @@
                 });
             }
 
-            // --- START: REPLACED JAVASCRIPT ---
+            // --- Portfolio Carousel Logic ---
             const scrollContainerGroup = document.querySelector('.scroll-container-group');
             if (scrollContainerGroup) {
                 const scrollContainer = scrollContainerGroup.querySelector('.portfolio-scroll-container');
@@ -1103,37 +1096,12 @@
                 const originalCards = Array.from(portfolioRow.children);
                 const cloneCount = originalCards.length;
 
-                // Re-attach event listeners to original cards after cloning
-                originalCards.forEach(card => {
-                    card.addEventListener('click', () => {
-                        const src = card.dataset.videoSrc;
-                        if(src) {
-                            modal.querySelector('iframe').src = src + "?autoplay=1";
-                            modal.classList.add('active');
-                        }
-                    });
-                });
-
                 originalCards.forEach(card => {
                     const clone = card.cloneNode(true);
-                    clone.addEventListener('click', () => {
-                         const src = clone.dataset.videoSrc;
-                        if(src) {
-                            modal.querySelector('iframe').src = src + "?autoplay=1";
-                            modal.classList.add('active');
-                        }
-                    });
                     portfolioRow.appendChild(clone);
                 });
                 originalCards.slice().reverse().forEach(card => {
                     const clone = card.cloneNode(true);
-                     clone.addEventListener('click', () => {
-                         const src = clone.dataset.videoSrc;
-                        if(src) {
-                            modal.querySelector('iframe').src = src + "?autoplay=1";
-                            modal.classList.add('active');
-                        }
-                    });
                     portfolioRow.prepend(clone);
                 });
 
@@ -1218,7 +1186,6 @@
                 setInitialPosition();
                 window.addEventListener('resize', setInitialPosition);
             }
-            // --- END: REPLACED JAVASCRIPT ---
 
         });
     </script>
