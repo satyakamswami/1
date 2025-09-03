@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Video Editor Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -477,7 +477,8 @@
                         <a href="https://www.upwork.com/freelancers/~01f47836eca5a8b3cd?mp_source=share" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[var(--accent-primary)] px-3 py-2 text-sm font-medium transition-colors">My Upwork</a>
                     </div>
                 </div>
-                <div class="-mr-2 flex md:hidden">
+                <!-- Hamburger Menu Button - Now hidden on all screens -->
+                <div class="-mr-2 flex md:hidden hidden">
                     <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
@@ -486,7 +487,8 @@
                 </div>
             </div>
         </div>
-        <div class="md:hidden absolute top-16 w-full bg-black bg-opacity-90 backdrop-blur-md" id="mobile-menu">
+        <!-- Mobile Menu Dropdown - Now hidden on all screens -->
+        <div class="md:hidden hidden absolute top-16 w-full bg-black bg-opacity-90 backdrop-blur-md" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Portfolio</a>
                 <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">About</a>
@@ -780,6 +782,32 @@
         </div>
     </footer>
 
+    <!-- Mobile Bottom Navigation Bar -->
+    <div id="mobile-bottom-nav" class="md:hidden fixed bottom-0 left-0 w-full bg-black bg-opacity-30 backdrop-blur-md border-t border-white/10 z-50">
+        <div class="flex justify-around items-center h-16">
+            <a href="#portfolio" class="flex flex-col items-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors px-2 py-1">
+                 <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                <span class="text-xs">Portfolio</span>
+            </a>
+            <a href="#about" class="flex flex-col items-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors px-2 py-1">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span class="text-xs">About</span>
+            </a>
+            <a href="#testimonials" class="flex flex-col items-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors px-2 py-1">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                <span class="text-xs">Testimonials</span>
+            </a>
+            <a href="#contact" class="flex flex-col items-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors px-2 py-1">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <span class="text-xs">Contact</span>
+            </a>
+            <a href="https://www.upwork.com/freelancers/~01f47836eca5a8b3cd?mp_source=share" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors px-2 py-1">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                <span class="text-xs">Upwork</span>
+            </a>
+        </div>
+    </div>
+
     <div class="video-modal">
         <div class="video-modal-content">
             <div class="video-modal-close">
@@ -978,8 +1006,6 @@
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
                         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        // Also close mobile menu if it's open
-                        document.getElementById('mobile-menu').classList.remove('open');
                     }
                 });
             });
@@ -1005,13 +1031,6 @@
 
             document.querySelectorAll('.animate-on-scroll, .testimonial-card, .skill-bar').forEach(el => {
                 scrollObserver.observe(el);
-            });
-
-            // --- Mobile Menu Toggle ---
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('open');
             });
 
             // --- Form Submission Handler ---
@@ -1061,7 +1080,7 @@
                     }, 5000);
                 }
             });
-                        
+                                
             // --- Video Modal Logic ---
             const modal = document.querySelector('.video-modal');
             if (modal) {
@@ -1223,3 +1242,4 @@
     </script>
 </body>
 </html>
+
