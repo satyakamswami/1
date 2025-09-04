@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Video Editor Portfolio</title>
+    <title>Satyakam Swami – Video Editor & Motion Graphics Expert</title>
+<meta name="description" content="Professional video editor and motion graphics specialist. Get high-quality edits, VFX, and creative storytelling.">
+<meta name="keywords" content="video editing, motion graphics, freelance video editor, best video editor, video editor portfolio, VFX, creative edits">
+<meta name="author" content="Satyakam">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* --- 1. PREMIUM FONTS & COLORS --- */
@@ -29,6 +33,10 @@
         }
 
         /* --- Body and Font Setup --- */
+        html, body {
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        
         body {
             font-family: 'Manrope', sans-serif;
             background: var(--bg-dark-primary);
@@ -37,7 +45,6 @@
             position: relative;
             opacity: 0;
             animation: pageFadeIn 1s ease forwards;
-            overflow-x: hidden; /* Prevent horizontal scroll */
         }
         
         @keyframes pageFadeIn {
@@ -85,7 +92,6 @@
             animation: twinkle 5s infinite;
             transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        /* ADDED: Style for faded stars from Website B */
         .star.faded {
             opacity: 0 !important;
             transform: scale(0);
@@ -221,18 +227,13 @@
             top: 0;
             left: 0;
             z-index: -1;
-            /* MODIFIED: Using a subtle background for the active highlight */
             background: rgba(14, 165, 233, 0.2);
             border-radius: 9999px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0; /* JS will now control the opacity on scroll */
+            opacity: 0;
             pointer-events: none;
         }
         .text-white-force { color: white !important; }
-
-        /* Mobile navigation menu */
-        #mobile-menu { transition: all 0.3s ease-out; transform: translateY(-100%); }
-        #mobile-menu.open { transform: translateY(0); }
 
         /* --- Scroll-Reveal Animation --- */
         .animate-on-scroll {
@@ -279,7 +280,7 @@
             border: 1px solid var(--border-color);
         }
 
-        /* --- START: REPLACED PORTFOLIO STYLES --- */
+        /* --- Portfolio Styles --- */
         .portfolio-row-title {
             font-size: 1.5rem;
             line-height: 2rem;
@@ -416,7 +417,6 @@
         .scroll-arrow:hover svg {
             transform: scale(1.1);
         }
-        /* --- END: REPLACED PORTFOLIO STYLES --- */
 
         /* --- VIDEO MODAL --- */
         .video-modal {
@@ -429,7 +429,7 @@
         
         .video-modal-content {
             position: relative;
-            width: 65vw; /* <-- MODIFIED: Was 85vw */
+            width: 65vw;
             max-width: 1400px;
             aspect-ratio: 16 / 9;
             transform: scale(0.9);
@@ -478,24 +478,6 @@
                         <a href="https://www.upwork.com/freelancers/~01f47836eca5a8b3cd?mp_source=share" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[var(--accent-primary)] px-3 py-2 text-sm font-medium transition-colors">My Upwork</a>
                     </div>
                 </div>
-                <!-- Hamburger Menu Button - Now hidden on all screens -->
-                <div class="-mr-2 flex md:hidden hidden">
-                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu Dropdown - Now hidden on all screens -->
-        <div class="md:hidden hidden absolute top-16 w-full bg-black bg-opacity-90 backdrop-blur-md" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Portfolio</a>
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">About</a>
-                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Testimonials</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Contact</a>
-                <a href="https://www.upwork.com/freelancers/~01f47836eca5a8b3cd?mp_source=share" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">My Upwork</a>
             </div>
         </div>
     </nav>
@@ -503,18 +485,19 @@
     <section id="home" class="hero-background pt-16 pb-20 min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center">
-                <h1 class="text-3xl sm:text-5xl md:text-7xl font-black text-white mb-6 glow-text animate-on-scroll">
+                <h1 class="text-5xl sm:text-5xl md:text-7xl font-black text-white mb-6 glow-text animate-on-scroll">
                     SATYAKAM
                     <span class="block text-[var(--accent-primary)]">SWAMI</span>
                 </h1>
-                <p class="text-base sm:text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light h-8 md:h-auto animate-on-scroll" style="transition-delay: 0.4s;">
-                    Crafting cinematic experiences through <span id="typing-effect" class="text-[var(--accent-primary)] font-semibold"></span><span class="cursor-blink">|</span>
+                <p class="text-base sm:text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light h-14 md:h-auto animate-on-scroll" style="transition-delay: 0.4s;">
+                    <span class="block md:inline">Crafting cinematic experiences through </span>
+                    <span id="typing-effect" class="text-[var(--accent-primary)] font-semibold"></span><span class="cursor-blink">|</span>
                 </p>
-                <div class="flex flex-col sm:flex-row gap-6 justify-center animate-on-scroll" style="transition-delay: 0.6s;">
-                    <a href="#portfolio" class="bg-[var(--accent-primary)] hover:bg-[var(--accent-secondary)] text-white-force px-10 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-[var(--accent-primary)]/40">
+                <div class="flex flex-row gap-4 justify-center animate-on-scroll" style="transition-delay: 0.6s;">
+                    <a href="#portfolio" class="bg-[var(--accent-primary)] hover:bg-[var(--accent-secondary)] text-white-force px-6 py-3 sm:px-10 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-[var(--accent-primary)]/40">
                         View Portfolio
                     </a>
-                    <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-black px-10 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105">
+                    <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 sm:px-10 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all transform hover:scale-105">
                         Let's Collaborate
                     </a>
                 </div>
@@ -786,23 +769,23 @@
     <!-- Mobile Bottom Navigation Bar -->
     <div id="mobile-bottom-nav" class="md:hidden fixed bottom-0 left-0 w-full bg-black bg-opacity-30 backdrop-blur-md border-t border-white/10 z-50">
         <div class="flex items-center h-16">
-            <a href="#portfolio" class="flex-1 flex flex-col items-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors py-1">
+            <a href="#portfolio" class="flex-1 flex flex-col items-center justify-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors py-1 h-full">
                  <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
                 <span class="text-xs">Portfolio</span>
             </a>
-            <a href="#about" class="flex-1 flex flex-col items-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors py-1">
+            <a href="#about" class="flex-1 flex flex-col items-center justify-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors py-1 h-full">
                 <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 <span class="text-xs">About</span>
             </a>
-            <a href="#testimonials" class="flex-1 flex flex-col items-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors py-1">
+            <a href="#testimonials" class="flex-1 flex flex-col items-center justify-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors py-1 h-full">
                 <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                 <span class="text-xs">Testimonials</span>
             </a>
-            <a href="#contact" class="flex-1 flex flex-col items-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors py-1">
+            <a href="#contact" class="flex-1 flex flex-col items-center justify-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors py-1 h-full">
                 <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 <span class="text-xs">Contact</span>
             </a>
-            <a href="https://www.upwork.com/freelancers/~01f47836eca5a8b3cd?mp_source=share" target="_blank" rel="noopener noreferrer" class="flex-1 flex flex-col items-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors py-1">
+            <a href="https://www.upwork.com/freelancers/~01f47836eca5a8b3cd?mp_source=share" target="_blank" rel="noopener noreferrer" class="flex-1 flex flex-col items-center justify-center text-gray-400 hover:text-[var(--accent-primary)] transition-colors py-1 h-full">
                 <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 <span class="text-xs">Upwork</span>
             </a>
@@ -847,7 +830,6 @@
                     const originalOpacity = 0.2 + Math.random() * 0.8;
                     starEl.style.opacity = `${originalOpacity}`;
                     fragment.appendChild(starEl);
-                    // MODIFIED: Added isFading property for star interaction
                     stars.push({
                         element: starEl,
                         x: (left / 100) * window.innerWidth,
@@ -892,13 +874,11 @@
                 setTimeout(() => particle.remove(), duration);
             }
 
-            // MODIFIED: Replaced mousemove listener with new one from Website B
             document.addEventListener('mousemove', (e) => {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
                 cursorLight.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%))`;
                 
-                // ADDED: Star interaction logic
                 const touchRadius = 50;
                 stars.forEach(star => {
                     if (star.isFading) return;
@@ -911,7 +891,6 @@
                         star.isFading = true;
                         star.element.classList.add('faded');
                         
-                        // Create particles when a star is touched
                         for (let i = 0; i < 3; i++) {
                             createParticle(star.x, star.y);
                         }
@@ -961,7 +940,7 @@
                 typeEffect();
             }
             
-            // MODIFIED: New navigation highlighting logic from Website B
+            // --- Navigation Highlighting ---
             const highlightBox = document.getElementById('highlight-box');
             const mainNavContainer = document.querySelector('nav .hidden.md\\:block .relative');
             const navLinks = mainNavContainer.querySelectorAll('a.nav-link[href^="#"]');
@@ -972,7 +951,7 @@
                 
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    if (window.scrollY >= sectionTop - 80) { // 80px offset for nav height
+                    if (window.scrollY >= sectionTop - 80) {
                         currentSectionId = section.getAttribute('id');
                     }
                 });
@@ -999,7 +978,6 @@
             };
 
             window.addEventListener('scroll', updateActiveNav);
-            // End of new nav logic
 
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -1011,7 +989,7 @@
                 });
             });
 
-            // --- ALL SCROLL-BASED ANIMATIONS ---
+            // --- Scroll-Based Animations ---
             const scrollObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1090,7 +1068,7 @@
                     element.addEventListener('click', () => {
                         const src = element.dataset.videoSrc;
                         if(src) {
-                            iframe.src = src + "?autoplay=1"; // Added autoplay
+                            iframe.src = src + "?autoplay=1";
                             modal.classList.add('active');
                         }
                     });
@@ -1109,7 +1087,7 @@
                 });
             }
 
-            // --- START: REPLACED JAVASCRIPT ---
+            // --- Portfolio Carousel Logic ---
             const scrollContainerGroup = document.querySelector('.scroll-container-group');
             if (scrollContainerGroup) {
                 const scrollContainer = scrollContainerGroup.querySelector('.portfolio-scroll-container');
@@ -1122,37 +1100,12 @@
                 const originalCards = Array.from(portfolioRow.children);
                 const cloneCount = originalCards.length;
 
-                // Re-attach event listeners to original cards after cloning
-                originalCards.forEach(card => {
-                    card.addEventListener('click', () => {
-                        const src = card.dataset.videoSrc;
-                        if(src) {
-                            modal.querySelector('iframe').src = src + "?autoplay=1";
-                            modal.classList.add('active');
-                        }
-                    });
-                });
-
                 originalCards.forEach(card => {
                     const clone = card.cloneNode(true);
-                    clone.addEventListener('click', () => {
-                         const src = clone.dataset.videoSrc;
-                        if(src) {
-                            modal.querySelector('iframe').src = src + "?autoplay=1";
-                            modal.classList.add('active');
-                        }
-                    });
                     portfolioRow.appendChild(clone);
                 });
                 originalCards.slice().reverse().forEach(card => {
                     const clone = card.cloneNode(true);
-                     clone.addEventListener('click', () => {
-                         const src = clone.dataset.videoSrc;
-                        if(src) {
-                            modal.querySelector('iframe').src = src + "?autoplay=1";
-                            modal.classList.add('active');
-                        }
-                    });
                     portfolioRow.prepend(clone);
                 });
 
@@ -1237,11 +1190,8 @@
                 setInitialPosition();
                 window.addEventListener('resize', setInitialPosition);
             }
-            // --- END: REPLACED JAVASCRIPT ---
 
         });
     </script>
 </body>
 </html>
-
-
