@@ -6,7 +6,7 @@
   <title>Satyakam Swami – Video Editor & Motion Graphics Expert</title>
   <meta name="description" content="Professional video editor and motion graphics specialist. Get high-quality edits, VFX, and creative storytelling.">
   <meta name="keywords" content="video editing, motion graphics, freelance video editor, best video editor, video editor portfolio, VFX, creative edits">
-  <meta name="author" content="Satyakam">
+  <meta name="author" content="Satyakam Swami">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Barlow+Condensed:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -191,11 +191,12 @@
     #home {
       min-height: 100svh; position: relative; display: flex; align-items: flex-end;
       padding: 80px clamp(1.25rem, 5vw, 4rem) clamp(5rem, 9vw, 9rem); overflow: hidden;
+      background: var(--c-ink);
+      z-index: 2;
     }
+
     .hero-content { position: relative; z-index: 2; max-width: 1600px; width: 100%; margin: 0 auto; }
-    .hero-eyebrow { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.35em; color: var(--c-grey3); text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
-    .hero-eyebrow::before { content: ''; display: block; width: 36px; height: 1px; background: var(--c-grey3); }
-    .hero-name { font-family: var(--font-cond); font-size: clamp(4.5rem, 15vw, 16rem); font-weight: 900; line-height: 0.88; letter-spacing: -0.02em; text-transform: uppercase; }
+   .hero-name { font-family: var(--font-cond); font-size: clamp(4.5rem, 15vw, 16rem); font-weight: 900; line-height: 0.88; letter-spacing: -0.02em; text-transform: uppercase; }
     .hero-name-line { overflow: hidden; }
     .hero-name-line span { display: block; transform: translateY(110%); animation: slideUp 1s var(--ease-out-expo) forwards; }
     .hero-name-line:nth-child(1) span { animation-delay: 0.4s; color: var(--c-pure); }
@@ -434,6 +435,7 @@
     ::-webkit-scrollbar { width: 2px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: var(--c-grey1); }
+    @media (max-width: 768px) { .section:last-of-type { padding-bottom: 5rem; } }
   </style>
 </head>
 <body>
@@ -483,8 +485,7 @@
 <!-- HERO -->
 <section id="home">
   <div class="hero-content">
-    <div class="hero-eyebrow">Video Editor &amp; Motion Graphics Expert</div>
-    <div class="hero-name">
+   <div class="hero-name">
       <div class="hero-name-line"><span>SATYAKAM</span></div>
       <div class="hero-name-line"><span>SWAMI</span></div>
     </div>
